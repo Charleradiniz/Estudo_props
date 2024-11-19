@@ -1,0 +1,25 @@
+.gatos-container {
+    background-image: url('/src/assets/297.jpg'); /* Caminho relativo para Vite */
+    background-size: cover;
+    background-position: center;
+    display: grid; /* Mudando para grid */
+    grid-template-columns: repeat(3, 1fr); /* Altere para 3 colunas */
+    gap: 20px; /* Espaço entre os cards */
+    padding: 20px; /* Opcional: para adicionar um espaço interno */
+    justify-content: center;
+    align-items: center;
+}
+
+.gato {
+    background-color: white; /* Opcional: para destacar os cards */
+    border-radius: 10px; /* Opcional: para bordas arredondadas */
+    padding: 10px; /* Opcional: para espaço interno nos cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Opcional: sombra dos cards */
+}
+
+
+.Adicionar {
+    background-color: blueviolet;
+ 
+    
+}

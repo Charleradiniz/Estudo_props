@@ -1,0 +1,283 @@
+/* Global Styles */
+body {
+    background-color: blueviolet;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Card de Gato */
+.Card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 10px black;
+    border: 1px solid black;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 15px;
+    height: 500px;
+    border-radius: 15px;
+    background-color: rgba(23, 225, 240, 0.409);
+}
+
+.Gato {
+    max-width: 200px;
+    max-height: 200px;
+    width: 200px;
+    height: 200px;
+    border-radius: 15%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Card de Adicionar Gato */
+.icone-add-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 10px black;
+    border: 1px solid black;
+    max-width: 500px;
+    padding: 15px;
+    height: 500px;
+    border-radius: 15px;
+    background-color: rgba(23, 200, 70, 0.409);
+    cursor: pointer;
+}
+
+.icone-add_img {
+    width: 200px;
+    height: 200px;
+    margin: 15px; /* Substitui padding por margin */
+    border-radius: 15px;
+    object-fit: cover;
+    opacity: 60%;
+    transition: opacity 0.3s;
+    display: block; /* Garante alinhamento no contêiner */
+}
+
+.icone-add:hover {
+    background-color: rgba(33, 240, 70, 0.409);
+}
+
+.icone-add img:hover {
+    opacity: 100%;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #eab7f0e8;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.modal-content form label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content form input[type="checkbox"] {
+    margin-left: 8px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+    background: #f44336;
+    color: white;
+}
+
+.modal-buttons button:last-child {
+    background: #4caf50;
+    color: white;
+}
+
+/* Container de Gatos */
+.gatos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gato-card {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    background-color: #478aa792;
+    justify-content: space-around;
+    align-items: end;
+}
+
+.gato-card:hover {
+    transform: scale(1.05);
+}
+
+.gato-card-main {
+    cursor: pointer;
+    ;
+}
+
+/* Botão de Editar */
+.edit-button {
+    position: relative;
+    max-height: 30px;
+    background-color: #007bffb0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    position: relative;
+    max-height: 30px;
+    background-color: #ff2600b1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+  }
+  
+  .delete-button:hover {
+    background-color: #a71d2a;
+  }
+
+
+  .card-actions {
+    display: grid;
+    justify-content:center;
+    grid-template-columns:repeat(2, 1fr);
+    margin: 15px;
+
+
+  }
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .gatos-container {
+        grid-template-columns: 1fr; /* Uma coluna em telas médias */
+        padding: 15px;
+    }
+
+    .Card, .icone-add-container {
+        max-width: 90%; /* Ajusta o tamanho */
+        margin: 10px auto; /* Centraliza os cards */
+        height: auto;
+    }
+
+    .modal-content {
+        width: 80%;
+        margin: 10px; /* Espaçamento ao redor */
+    }
+
+    .modal-buttons button {
+        width: 48%; /* Botões em linha */
+    }
+
+    .card-actions {
+        grid-template-columns: 1fr; /* Um botão por linha */
+    }
+
+    .gato-card {
+        flex-direction: column; /* Cards em coluna */
+        padding: 15px;
+    }
+
+    .gato-card-main {
+        margin-bottom: 10px; /* Espaço entre imagem e botões */
+    }
+}
+
+@media (max-width: 768px) {
+    .gatos-container {
+        grid-template-columns: 1fr; /* Apenas 1 coluna */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .Card, .icone-add-container {
+        max-width: 100%;
+        height: auto;
+        padding: 8px;
+    }
+
+    .modal-content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .modal-buttons button {
+        width: 100%; /* Botões em linha */
+    }
+
+    .gato-card {
+        flex-direction: column; /* Cards em coluna */
+        padding: 10px;
+    }
+
+    .gato-card-main {
+        margin-bottom: 15px;
+    }
+}
